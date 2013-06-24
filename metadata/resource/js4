@@ -1,0 +1,12 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "url": "app/view/user_dashboard.js"
+    },
+    "designerId": "acbcbbc6-f80c-4370-b6b3-bfea80ff6c88"
+}

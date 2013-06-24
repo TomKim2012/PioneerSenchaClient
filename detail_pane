@@ -1,0 +1,218 @@
+{
+    "xdsVersion": "2.1.0",
+    "frameworkVersion": "touch21",
+    "internals": {
+        "type": "tabpanel",
+        "reference": {
+            "name": "items",
+            "type": "array"
+        },
+        "codeClass": null,
+        "userConfig": {
+            "designer|userClassName": "DetailPanel",
+            "designer|userAlias": "detailpanel"
+        },
+        "cn": [
+            {
+                "type": "tabbar",
+                "reference": {
+                    "name": "tabBar",
+                    "type": "object"
+                },
+                "codeClass": null,
+                "userConfig": {
+                    "container|pack": "center",
+                    "designer|userClassName": "MyTabBar",
+                    "docked": "top",
+                    "ui": "light"
+                }
+            },
+            {
+                "type": "container",
+                "reference": {
+                    "name": "items",
+                    "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                    "title": "Contact",
+                    "designer|userClassName": "MyContainer2",
+                    "id": "contact"
+                },
+                "cn": [
+                    {
+                        "type": "container",
+                        "reference": {
+                            "name": "items",
+                            "type": "array"
+                        },
+                        "codeClass": null,
+                        "userConfig": {
+                            "designer|userClassName": "MyContainer5",
+                            "id": "info",
+                            "padding": 10,
+                            "layout": "hbox"
+                        },
+                        "cn": [
+                            {
+                                "type": "component",
+                                "reference": {
+                                    "name": "items",
+                                    "type": "array"
+                                },
+                                "codeClass": null,
+                                "userConfig": {
+                                    "designer|userClassName": "MyComponent",
+                                    "height": 100,
+                                    "id": "photo",
+                                    "width": 100
+                                },
+                                "cn": [
+                                    {
+                                        "type": "template",
+                                        "reference": {
+                                            "name": "tpl",
+                                            "type": "object"
+                                        },
+                                        "codeClass": null,
+                                        "userConfig": {
+                                            "designer|userClassName": "tpl",
+                                            "implHandler": [
+                                                "<img class=\"photo\" src=\"{photo_url}\" width=\"100\" height=\"100\"/>"
+                                            ],
+                                            "designer|displayName": "tplPhoto"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "component",
+                                "reference": {
+                                    "name": "items",
+                                    "type": "array"
+                                },
+                                "codeClass": null,
+                                "userConfig": {
+                                    "designer|userClassName": "MyComponent1",
+                                    "id": "data",
+                                    "padding": 10
+                                },
+                                "cn": [
+                                    {
+                                        "type": "template",
+                                        "reference": {
+                                            "name": "tpl",
+                                            "type": "object"
+                                        },
+                                        "codeClass": null,
+                                        "userConfig": {
+                                            "designer|userClassName": "tpl",
+                                            "implHandler": [
+                                                "<h2>{name}</h2>",
+                                                "<div class=\"info\">",
+                                                "    {address1}<br/>",
+                                                "    <img src=\"{rating_img_url_small}\"/>",
+                                                "</div>"
+                                            ],
+                                            "designer|displayName": "tplData"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "template",
+                                "reference": {
+                                    "name": "tpl",
+                                    "type": "object"
+                                },
+                                "codeClass": null,
+                                "userConfig": {
+                                    "designer|userClassName": "tpl",
+                                    "implHandler": [
+                                        "<img class=\"photo\" src=\"{photo_url}\" width=\"100\" height=\"100\"/>",
+                                        "<h2>{name}</h2>",
+                                        "<div class=\"info\">",
+                                        "    {address1}<br/>",
+                                        "    <img src=\"{rating_img_url_small}\"/>",
+                                        "</div>"
+                                    ],
+                                    "designer|displayName": "tplInfo"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "container",
+                        "reference": {
+                            "name": "items",
+                            "type": "array"
+                        },
+                        "codeClass": null,
+                        "userConfig": {
+                            "container|pack": "center",
+                            "designer|userClassName": "MyContainer3",
+                            "layout": "hbox"
+                        },
+                        "cn": [
+                            {
+                                "type": "button",
+                                "reference": {
+                                    "name": "items",
+                                    "type": "array"
+                                },
+                                "codeClass": null,
+                                "userConfig": {
+                                    "designer|userClassName": "MyButton",
+                                    "width": 100,
+                                    "text": "Call"
+                                }
+                            },
+                            {
+                                "type": "spacer",
+                                "reference": {
+                                    "name": "items",
+                                    "type": "array"
+                                },
+                                "codeClass": null,
+                                "userConfig": {
+                                    "designer|userClassName": "MySpacer",
+                                    "width": 57
+                                }
+                            },
+                            {
+                                "type": "button",
+                                "reference": {
+                                    "name": "items",
+                                    "type": "array"
+                                },
+                                "codeClass": null,
+                                "userConfig": {
+                                    "designer|userClassName": "MyButton1",
+                                    "width": 100,
+                                    "text": "More"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "map",
+                "reference": {
+                    "name": "items",
+                    "type": "array"
+                },
+                "codeClass": null,
+                "userConfig": {
+                    "title": "Map",
+                    "designer|userClassName": "MyMap",
+                    "height": null,
+                    "id": "detailMap"
+                }
+            }
+        ]
+    },
+    "linkedNodes": {},
+    "boundStores": {},
+    "boundModels": {}
+}

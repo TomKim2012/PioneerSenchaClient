@@ -1,0 +1,93 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "register_options",
+        "margin": null,
+        "padding": "0 40px",
+        "designer|userClassName": "registration_options",
+        "designer|userAlias": "registration_options",
+        "designer|displayName": "register_options",
+        "designer|createAlias": null,
+        "autoDestroy": false,
+        "defaults": [
+            "{",
+            " margin:'10px',",
+            " iconCls: 'user',",
+            " iconMask: true",
+            "}"
+        ],
+        "layout": "vbox",
+        "scrollable": true
+    },
+    "designerId": "99c208be-514e-41e0-bfc5-9e22356acd38",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "margin": null,
+                "designer|userClassName": "MyFieldSet2",
+                "title": "Choose Account Type:-"
+            },
+            "designerId": "d1b64ff0-7b21-4b77-aa9e-8fb3ff2a578f"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "id": "merchant",
+                "designer|userClassName": "MyButton9",
+                "iconCls": null,
+                "iconMask": null,
+                "text": "Merchant A/C"
+            },
+            "designerId": "4306f1f4-64cb-4896-8fa5-68789da5ceb9"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "id": "agent",
+                "designer|userClassName": "MyButton10",
+                "iconMask": null,
+                "text": "Agent A/C"
+            },
+            "designerId": "88726779-3d66-47be-8133-6e268a2bacf4"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "id": "customer",
+                "designer|userClassName": "MyButton16",
+                "text": "Customer A/C"
+            },
+            "designerId": "79323445-7bac-4411-b987-7e419be4ffb2"
+        }
+    ]
+}

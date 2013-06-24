@@ -1,0 +1,12 @@
+{
+    "type": "jsresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "url": "app/view/merchant_dashboard.js"
+    },
+    "designerId": "74070403-b91b-4e98-b5b5-9e29624caee1"
+}

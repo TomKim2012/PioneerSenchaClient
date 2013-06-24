@@ -1,0 +1,84 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Merchants"
+    },
+    "designerId": "46ee3c72-edc1-42b1-9d53-f6be983fd7bc",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "merchant_id",
+                "type": "int",
+                "designer|userClassName": "field5"
+            },
+            "designerId": "bd165eea-6afc-45dc-98c2-a35990744565"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Business_name",
+                "type": "string",
+                "designer|userClassName": "field6"
+            },
+            "designerId": "32ffc90b-4a32-4f7e-b32c-b9b724880b48"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "city",
+                "type": "string",
+                "designer|userClassName": "field12"
+            },
+            "designerId": "98d0f7b8-5479-4f6c-b0ba-c173ceb6502d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "address",
+                "type": "string",
+                "designer|userClassName": "field13"
+            },
+            "designerId": "55899003-0483-4588-86d2-2608bd0685fd"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "user_id",
+                "type": "int",
+                "designer|userClassName": "field14"
+            },
+            "designerId": "e9e012d4-608d-4b40-8619-bea36f11e011"
+        }
+    ]
+}

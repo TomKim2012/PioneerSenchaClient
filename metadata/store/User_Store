@@ -1,0 +1,29 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "Users2",
+        "storeId": "current_user",
+        "designer|userClassName": "User_Store"
+    },
+    "designerId": "b9a4d3b9-d0bc-418c-b220-d0976a6f8084",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.LocalStorage",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyLocalStorageProxy",
+                "id": "local"
+            },
+            "designerId": "43439db3-0838-4ef6-b669-22c2d9808bc1"
+        }
+    ]
+}

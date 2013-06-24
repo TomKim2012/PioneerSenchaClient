@@ -1,0 +1,260 @@
+{
+    "name": "PesaSafe_final",
+    "settings": {
+        "urlPrefix": "41.89.68.188/PesaSafe_final/app.html",
+        "spacesToIndent": 4,
+        "exportPath": "E:/Projects/FlexiPay_published",
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": true,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true
+    },
+    "xdsVersion": "2.2.0",
+    "xdsBuild": 908,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000499,
+    "framework": "touch20",
+    "topInstanceFileMap": {
+        "7c054ded-2145-462e-86c3-7fe0d7664a65": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "556a0c1b-2ff8-45e9-924b-1a4a86db217e": {
+            "paths": [
+                "metadata/view/Viewport",
+                "app/view/override/Viewport.js",
+                "app/view/Viewport.js"
+            ],
+            "className": "Viewport"
+        },
+        "4797913e-7c38-4290-bd62-39bab032aaa5": {
+            "paths": [
+                "metadata/model/Transaction",
+                "app/model/override/Transaction.js",
+                "app/model/Transaction.js"
+            ],
+            "className": "Transaction"
+        },
+        "d7f158d6-4c6d-4f64-9c70-128ad53da23e": {
+            "paths": [
+                "metadata/model/Verify",
+                "app/model/override/Verify.js",
+                "app/model/Verify.js"
+            ],
+            "className": "Verify"
+        },
+        "46ee3c72-edc1-42b1-9d53-f6be983fd7bc": {
+            "paths": [
+                "metadata/model/Merchants",
+                "app/model/override/Merchants.js",
+                "app/model/Merchants.js"
+            ],
+            "className": "Merchants"
+        },
+        "648aee2d-d595-4d85-a9d2-4b636e648311": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        },
+        "4a5c22e9-a39f-4315-84f4-09dc64f168b9": {
+            "paths": [
+                "metadata/controller/main_controller",
+                "app/controller/override/main_controller.js",
+                "app/controller/main_controller.js"
+            ],
+            "className": "main_controller"
+        },
+        "764d99de-7e2b-4f1c-ae86-2bca01a30cdf": {
+            "paths": [
+                "metadata/view/Authorisation_screen",
+                "app/view/override/Authorisation_screen.js",
+                "app/view/Authorisation_screen.js"
+            ],
+            "className": "Authorisation_screen"
+        },
+        "4f621839-8f06-4746-bda4-4c0f0501480f": {
+            "paths": [
+                "metadata/view/introduction_carousel",
+                "app/view/override/introduction_carousel.js",
+                "app/view/introduction_carousel.js"
+            ],
+            "className": "introduction_carousel"
+        },
+        "99c208be-514e-41e0-bfc5-9e22356acd38": {
+            "paths": [
+                "metadata/view/registration_options",
+                "app/view/override/registration_options.js",
+                "app/view/registration_options.js"
+            ],
+            "className": "registration_options"
+        },
+        "0e50699c-dae8-43d2-9769-6bc4fa3e5108": {
+            "paths": [
+                "metadata/view/customer_registration_form",
+                "app/view/override/customer_registration_form.js",
+                "app/view/customer_registration_form.js"
+            ],
+            "className": "customer_registration_form"
+        },
+        "0878b5ed-c2ed-4e60-8575-94e0c4a19570": {
+            "paths": [
+                "metadata/view/agent_registration_form",
+                "app/view/override/agent_registration_form.js",
+                "app/view/agent_registration_form.js"
+            ],
+            "className": "agent_registration_form"
+        },
+        "3a19be87-131e-4012-8db6-61f802ed8d4b": {
+            "paths": [
+                "metadata/view/merchant_registration_form",
+                "app/view/override/merchant_registration_form.js",
+                "app/view/merchant_registration_form.js"
+            ],
+            "className": "merchant_registration_form"
+        },
+        "2a68ccb3-688f-428f-b38f-cdcac78a5818": {
+            "paths": [
+                "metadata/view/splash_screen",
+                "app/view/override/splash_screen.js",
+                "app/view/splash_screen.js"
+            ],
+            "className": "splash_screen"
+        },
+        "87e1922f-0822-462c-aa8e-da5a076dcb2c": {
+            "paths": [
+                "metadata/model/Agents",
+                "app/model/override/Agents.js",
+                "app/model/Agents.js"
+            ],
+            "className": "Agents"
+        },
+        "7e7db38d-cf98-4946-bb93-37bedff1102f": {
+            "paths": [
+                "metadata/model/Account",
+                "app/model/override/Account.js",
+                "app/model/Account.js"
+            ],
+            "className": "Account"
+        },
+        "fcdd2af4-f2f6-4993-9bd3-afa70db81557": {
+            "paths": [
+                "metadata/view/authentication_screen",
+                "app/view/override/authentication_screen.js",
+                "app/view/authentication_screen.js"
+            ],
+            "className": "authentication_screen"
+        },
+        "b059b952-a11d-4297-8ecc-246c3cddc4e8": {
+            "paths": [
+                "metadata/model/Users2",
+                "app/model/override/Users2.js",
+                "app/model/Users2.js"
+            ],
+            "className": "Users2"
+        },
+        "31fc458a-7707-4f6b-96e4-3def63f37620": {
+            "paths": [
+                "metadata/resource/js"
+            ],
+            "className": "js"
+        },
+        "6ad03586-cec0-4a4e-b02b-86e79e1c436c": {
+            "paths": [
+                "metadata/resource/js1"
+            ],
+            "className": "js1"
+        },
+        "9cdf2ddd-bed0-4ea4-b1c6-e907dc6ea165": {
+            "paths": [
+                "metadata/view/Verification_screen",
+                "app/view/override/Verification_screen.js",
+                "app/view/Verification_screen.js"
+            ],
+            "className": "Verification_screen"
+        },
+        "b9a4d3b9-d0bc-418c-b220-d0976a6f8084": {
+            "paths": [
+                "metadata/store/User_Store",
+                "app/store/override/User_Store.js",
+                "app/store/User_Store.js"
+            ],
+            "className": "User_Store"
+        },
+        "915a701f-361b-464a-b42e-10f62f05eb5d": {
+            "paths": [
+                "metadata/resource/css1"
+            ],
+            "className": "css1"
+        },
+        "4a285a89-5d9a-457b-ae70-7df03dfc021b": {
+            "paths": [
+                "metadata/resource/js2"
+            ],
+            "className": "js2"
+        },
+        "74070403-b91b-4e98-b5b5-9e29624caee1": {
+            "paths": [
+                "metadata/resource/js3"
+            ],
+            "className": "js3"
+        },
+        "acbcbbc6-f80c-4370-b6b3-bfea80ff6c88": {
+            "paths": [
+                "metadata/resource/js4"
+            ],
+            "className": "js4"
+        },
+        "9943f6f7-20a8-46a5-9f21-11a0f11abba6": {
+            "paths": [
+                "metadata/resource/js5"
+            ],
+            "className": "js5"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "556a0c1b-2ff8-45e9-924b-1a4a86db217e",
+            "4f621839-8f06-4746-bda4-4c0f0501480f",
+            "99c208be-514e-41e0-bfc5-9e22356acd38",
+            "0e50699c-dae8-43d2-9769-6bc4fa3e5108",
+            "0878b5ed-c2ed-4e60-8575-94e0c4a19570",
+            "3a19be87-131e-4012-8db6-61f802ed8d4b",
+            "2a68ccb3-688f-428f-b38f-cdcac78a5818",
+            "764d99de-7e2b-4f1c-ae86-2bca01a30cdf",
+            "fcdd2af4-f2f6-4993-9bd3-afa70db81557",
+            "9cdf2ddd-bed0-4ea4-b1c6-e907dc6ea165"
+        ],
+        "store": [
+            "b9a4d3b9-d0bc-418c-b220-d0976a6f8084"
+        ],
+        "controller": [
+            "4a5c22e9-a39f-4315-84f4-09dc64f168b9"
+        ],
+        "model": [
+            "4797913e-7c38-4290-bd62-39bab032aaa5",
+            "d7f158d6-4c6d-4f64-9c70-128ad53da23e",
+            "b059b952-a11d-4297-8ecc-246c3cddc4e8",
+            "46ee3c72-edc1-42b1-9d53-f6be983fd7bc",
+            "87e1922f-0822-462c-aa8e-da5a076dcb2c",
+            "7e7db38d-cf98-4946-bb93-37bedff1102f"
+        ],
+        "resource": [
+            "7c054ded-2145-462e-86c3-7fe0d7664a65",
+            "648aee2d-d595-4d85-a9d2-4b636e648311",
+            "915a701f-361b-464a-b42e-10f62f05eb5d",
+            "31fc458a-7707-4f6b-96e4-3def63f37620",
+            "6ad03586-cec0-4a4e-b02b-86e79e1c436c",
+            "4a285a89-5d9a-457b-ae70-7df03dfc021b",
+            "74070403-b91b-4e98-b5b5-9e29624caee1",
+            "acbcbbc6-f80c-4370-b6b3-bfea80ff6c88",
+            "9943f6f7-20a8-46a5-9f21-11a0f11abba6"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

@@ -1,0 +1,254 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Users2"
+    },
+    "designerId": "b059b952-a11d-4297-8ecc-246c3cddc4e8",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "user_id",
+                "type": "auto",
+                "designer|userClassName": "field2"
+            },
+            "designerId": "b79d4f2c-533c-4856-a7e4-dcf577186a61"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "first_name",
+                "type": "string",
+                "designer|userClassName": "field3"
+            },
+            "designerId": "08dd9cf9-a615-4da9-a1d6-e7cb40298b33"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "last_name",
+                "type": "string",
+                "designer|userClassName": "field4"
+            },
+            "designerId": "a28de044-482a-4e8c-9654-bc341611d038"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "email",
+                "type": "string",
+                "designer|userClassName": "field5"
+            },
+            "designerId": "15f5319f-2647-4ad2-a8d8-686368d2c7d5"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "mobile_number",
+                "type": "string",
+                "designer|userClassName": "field11"
+            },
+            "designerId": "81d2ee93-2cef-4a9a-99b5-cc6224de12f2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "passcode",
+                "type": "int",
+                "designer|userClassName": "field21"
+            },
+            "designerId": "69bc54e6-09fd-4bac-8a04-2706fe622749"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "account_id",
+                "type": "int",
+                "designer|userClassName": "field31"
+            },
+            "designerId": "01d73a73-7593-4777-bc51-b4913d3d60fe"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyRestProxy",
+                "url": "http://41.89.68.188/restserver/index.php/api/Flexipay_server/user/format/json",
+                "headers": [
+                    "{'Accept' : 'application/json'}"
+                ]
+            },
+            "designerId": "f549a18b-7866-4b66-b9be-01dd6089825b"
+        },
+        {
+            "type": "emailvalidation",
+            "reference": {
+                "name": "validations",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "message": "Please Enter A valid Email.",
+                "designer|userClassName": "MyEmailValidation",
+                "field": "email"
+            },
+            "designerId": "fb6694d8-6f5a-4fc9-bd5d-73ccdd16284f",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "message",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "presencevalidation",
+            "reference": {
+                "name": "validations",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyPresenceValidation",
+                "field": "first_name"
+            },
+            "designerId": "50a29493-1bea-4a52-8b07-84a87ac34937"
+        },
+        {
+            "type": "presencevalidation",
+            "reference": {
+                "name": "validations",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyPresenceValidation1",
+                "field": "last_name"
+            },
+            "designerId": "7726627f-73d5-4a34-8915-54cb514d2b39"
+        },
+        {
+            "type": "presencevalidation",
+            "reference": {
+                "name": "validations",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyPresenceValidation4",
+                "field": "mobile_number"
+            },
+            "designerId": "9103292b-832f-4937-b998-286d6edc4af9"
+        },
+        {
+            "type": "lengthvalidation",
+            "reference": {
+                "name": "validations",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyLengthValidation",
+                "field": "mobile_number",
+                "min": 12
+            },
+            "designerId": "3ec11e88-5fa3-4e7e-b441-4530007f4484"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "business_name",
+                "designer|userClassName": "field27"
+            },
+            "designerId": "97b146a9-079a-4dc1-85d3-b82fa831380f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "business_location",
+                "designer|userClassName": "field28"
+            },
+            "designerId": "81b1dd4f-004a-4919-b26a-fc9b3fcdb0d2"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "business_address",
+                "designer|userClassName": "field29"
+            },
+            "designerId": "58ba8c90-21a6-464a-9676-f6c04af0fbc9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "business_id",
+                "designer|userClassName": "field30"
+            },
+            "designerId": "4861739f-43ca-4b8e-b6b4-927c0e96686b"
+        }
+    ]
+}

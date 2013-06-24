@@ -1,0 +1,84 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Agents"
+    },
+    "designerId": "87e1922f-0822-462c-aa8e-da5a076dcb2c",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "agent_id",
+                "type": "auto",
+                "designer|userClassName": "field15"
+            },
+            "designerId": "e5eee882-25f7-4f12-b4a5-288aad63a579"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "agent_name",
+                "type": "string",
+                "designer|userClassName": "field16"
+            },
+            "designerId": "7c1f63e7-3806-4e02-a83c-2aed37837523"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "city",
+                "type": "string",
+                "designer|userClassName": "field17"
+            },
+            "designerId": "1325eb35-c967-42e7-beb1-49b7ac139b31"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "address",
+                "type": "string",
+                "designer|userClassName": "field18"
+            },
+            "designerId": "6e9d50c2-4f07-48b2-bd15-9a31f3d0cd63"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "user_id",
+                "type": "int",
+                "designer|userClassName": "field19"
+            },
+            "designerId": "31444004-f456-4f5a-a906-04f9991ad718"
+        }
+    ]
+}

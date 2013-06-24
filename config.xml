@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget id="sampleapp" version="2.0.0"
+	xmlns:rim="http://www.blackberry.com/ns/widgets" xmlns="http://www.w3.org/ns/widgets">
+	
+	<author rim:copyright="Copyright 1998-2012 My Corp" href="http://www.example.com/">Tom Kimani</author>
+	
+	<name>FlexiPay</name>
+
+	<content rim:allowInvokeParams="true" src="app.html" />
+
+	<feature id="blackberry.ui.dialog" />
+		<feature id="blackberry.event" required="true" />
+		<feature id="blackberry.invoked" required="true" />
+		<feature id="blackberry.invoke" required="true" />
+		<feature id="blackberry.app" required="true">
+		<param value="0xffefefef" name="backgroundColor" />
+	</feature>
+
+	<access subdomains="true" uri="*"/>
+	  <access uri="http://41.89.68.188" subdomains="true" />    
+	  <access uri="https://41.89.68.188" subdomains="true" />  
+	
+	<!-- Invoke-target must be unique... -->
+	<rim:invoke-target id="com.tomkimani.d20121122.ww.a">
+		<type>APPLICATION</type>
+		<filter>
+			<action>bb.action.OPEN</action>
+			<mime-type>application/vnd.rim.nfc.ndef</mime-type>
+			<property value="ndef://1,ndef://2,ndef://4" var="uris" />
+		</filter>
+	</rim:invoke-target>
+	
+	<rim:permissions>
+		<rim:permit>access_shared</rim:permit>
+	</rim:permissions>
+</widget>

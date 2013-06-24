@@ -1,0 +1,206 @@
+{
+    "xdsVersion": "2.1.0",
+    "frameworkVersion": "touch21",
+    "internals": {
+        "type": "jsonpstore",
+        "reference": {
+            "name": "items",
+            "type": "array"
+        },
+        "codeClass": null,
+        "userConfig": {
+            "designer|userClassName": "BusinessStore",
+            "model": "Business",
+            "storeId": "BusinessStore"
+        },
+        "cn": [
+            {
+                "type": "jsonpproxy",
+                "reference": {
+                    "name": "proxy",
+                    "type": "object"
+                },
+                "codeClass": null,
+                "userConfig": {
+                    "designer|userClassName": "MyJsonPProxy"
+                },
+                "cn": [
+                    {
+                        "type": "jsonreader",
+                        "reference": {
+                            "name": "reader",
+                            "type": "object"
+                        },
+                        "codeClass": null,
+                        "userConfig": {
+                            "designer|userClassName": "MyJsonReader",
+                            "rootProperty": "businesses"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "linkedNodes": {},
+    "boundStores": {},
+    "boundModels": {
+        "1a7b373d-09ea-4801-ac4e-48a72712a4fd": {
+            "type": "datamodel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "Business"
+            },
+            "cn": [
+                {
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyField",
+                        "name": "id",
+                        "type": "int"
+                    }
+                },
+                {
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyField1",
+                        "name": "name"
+                    }
+                },
+                {
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyField2",
+                        "name": "latitude"
+                    }
+                },
+                {
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyField3",
+                        "name": "longitude"
+                    }
+                },
+                {
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyField4",
+                        "name": "address1"
+                    }
+                },
+                {
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyField5",
+                        "name": "address2"
+                    }
+                },
+                {
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyField6",
+                        "name": "address3"
+                    }
+                },
+                {
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyField7",
+                        "name": "phone"
+                    }
+                },
+                {
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyField8",
+                        "name": "state_code"
+                    }
+                },
+                {
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyField9",
+                        "name": "mobile_url"
+                    }
+                },
+                {
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyField10",
+                        "name": "rating_img_url_small"
+                    }
+                },
+                {
+                    "type": "datafield",
+                    "reference": {
+                        "name": "fields",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyField11",
+                        "name": "photo_url"
+                    }
+                }
+            ]
+        }
+    }
+}

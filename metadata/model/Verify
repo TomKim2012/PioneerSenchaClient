@@ -1,0 +1,41 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Verify"
+    },
+    "designerId": "d7f158d6-4c6d-4f64-9c70-128ad53da23e",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "verify_code",
+                "type": "string",
+                "designer|userClassName": "field2"
+            },
+            "designerId": "37a1f082-4924-429c-8f70-480ad0fe89a6"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyRestProxy",
+                "url": "http://41.89.68.188/restserver/index.php/api/Flexipay_server/verify/format/json"
+            },
+            "designerId": "5b425ee5-dc86-494e-b838-6205d6f67e56"
+        }
+    ]
+}

@@ -1,0 +1,98 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Transaction"
+    },
+    "designerId": "4797913e-7c38-4290-bd62-39bab032aaa5",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Transaction_id",
+                "type": "string",
+                "designer|userClassName": "field1"
+            },
+            "designerId": "a4a3f20b-801f-428c-8fdd-1271bebf7614"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "transaction_type",
+                "type": "string",
+                "designer|userClassName": "field2"
+            },
+            "designerId": "ecab6fd5-2e6f-4e0c-9037-2be9455382e5"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "transaction_name",
+                "type": "string",
+                "designer|userClassName": "field3"
+            },
+            "designerId": "8a03ecfd-c949-4056-b111-1e710edb6d72"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "transaction_date",
+                "type": "date",
+                "designer|userClassName": "field"
+            },
+            "designerId": "4e770a08-c0bd-4028-bf8c-24784de15118"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "transaction_amount",
+                "type": "int",
+                "designer|userClassName": "field4"
+            },
+            "designerId": "6326379f-355d-4023-9614-2ffb3d4cc1b0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "user_id",
+                "type": "int",
+                "designer|userClassName": "field20"
+            },
+            "designerId": "44ed807b-bbbb-4cb2-9cd3-8be25f58a166"
+        }
+    ]
+}

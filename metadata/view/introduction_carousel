@@ -1,0 +1,32 @@
+{
+    "type": "Ext.navigation.View",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|animation": "scroll",
+        "html": null,
+        "ui": "",
+        "designer|userClassName": "introduction_carousel",
+        "designer|userAlias": "introduction_carousel",
+        "designer|displayName": "introduction_sliders"
+    },
+    "designerId": "4f621839-8f06-4746-bda4-4c0f0501480f",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|createAlias": "splash_screen"
+            },
+            "designerId": "3d6aabc6-2baa-4f15-b508-02b6042f9862",
+            "masterInstanceId": "2a68ccb3-688f-428f-b38f-cdcac78a5818"
+        }
+    ]
+}

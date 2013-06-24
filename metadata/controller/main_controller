@@ -1,0 +1,990 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "main_controller"
+    },
+    "designerId": "4a5c22e9-a39f-4315-84f4-09dc64f168b9",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAuthoriseTap",
+                "fn": "onAuthoriseTap",
+                "implHandler": [
+                    "//Get the Form Data",
+                    "var form = this.getAuthorisation_screen();",
+                    "var values= form.getValues();",
+                    "",
+                    "console.log(values);",
+                    "",
+                    "//Combine the Passwords",
+                    "passcode= values.mypasswordfield1 + values.mypasswordfield2 + values.mypasswordfield3 + values.mypasswordfield4;",
+                    "",
+                    "console.log(\"Entered passcode the following:\",passcode);",
+                    "",
+                    "",
+                    "//Check that a passcode was Entered",
+                    "if(passcode){     ",
+                    "    //1. Is there a phone Number in session storage",
+                    "    var sessionObject = localStorage.getItem('sessionObject');",
+                    "    console.log(sessionObject);",
+                    "    sessionObject=JSON.parse(sessionObject); ",
+                    "",
+                    "    if(sessionObject.has_account === true){",
+                    "        Ext.Viewport.setMasked({",
+                    "            xtype: 'loadmask',",
+                    "            message: 'Logging In...'",
+                    "        });",
+                    "",
+                    "        // A)Get the Mobile Number- User has Entered a Mobile Number and has an Account",
+                    "        if(sessionObject.mobile_number){  ",
+                    "            console.log(\"The Logging In with Mobile Number\");",
+                    "            //B) Perform User Login Process with Mobile Number",
+                    "            Ext.Ajax.request({",
+                    "                url: 'http://41.89.68.188/restserver/index.php/api/Flexipay_server/login/format/json',",
+                    "                method: 'POST',",
+                    "                params: {",
+                    "                    mobile_number:sessionObject.mobile_number,",
+                    "                    passcode:passcode",
+                    "                },",
+                    "",
+                    "                success:function(result)",
+                    "                {",
+                    "                    Ext.Viewport.setMasked(false); // hide the load screen",
+                    "",
+                    "                    //2. Scrutinize the Results",
+                    "                    //2a. Store the user data to the HTML-5 Session Variable(for later usage)",
+                    "                    var data = Ext.JSON.decode(result.responseText.trim());",
+                    "",
+                    "                    if(data.authorize){",
+                    "                        //2b. Store the USER-ID in Session Storage (HTML5)",
+                    "                        var sessionObject = {'user_id': data.user_id, 'mobile_number': data.mobile_number, 'access_keys':data.access_keys, 'account_balance': data.account_balance, 'full_names': data.full_names};",
+                    "                        localStorage.setItem('sessionObject',JSON.stringify(sessionObject));",
+                    "",
+                    "                        console.log(sessionObject);",
+                    "",
+                    "",
+                    "                        Ext.Msg.alert(\"Information\",\"Logged In As: \"+ data.full_names +\"\\n Account Type:\"+ data.access_keys + \"Account Balance: \" + data.account_balance);",
+                    "",
+                    "                        //Direct User to the screen Based on his Login Info",
+                    "                        //1.If Customer",
+                    "                        if(data.access_keys === 'customer_user'){",
+                    "                            var user_dashboard = Ext.create('FlexiPay.view.customer_dashboard');     ",
+                    "                            Ext.Viewport.setActiveItem(user_dashboard);",
+                    "                        }",
+                    "                        else if(data.access_keys === 'merchant_user'){",
+                    "                            //If Merchant",
+                    "                            var merchant_dashboard = Ext.create('FlexiPay.view.merchant_dashboard'); ",
+                    "                            Ext.Viewport.setActiveItem(merchant_dashboard);  ",
+                    "                        }else if(data.access_keys === 'agent_user'){",
+                    "                            //If Agent",
+                    "                            var agent_dashboard = Ext.create('FlexiPay.view.agent_dashboard'); ",
+                    "                            Ext.Viewport.setActiveItem(agent_dashboard); ",
+                    "                        }                 ",
+                    "                    }else{",
+                    "                        //1. Alert Success",
+                    "                        Ext.Msg.alert(\"Failure\", \"Incorrect Credentials\");\t",
+                    "                    }",
+                    "                }, ",
+                    "                //Failed.. Call this function..",
+                    "                failure: function(result){",
+                    "                    Ext.Viewport.setMasked(false); // hide the load screen",
+                    "                    Ext.Msg.alert(\"Failure\", \"Incorrect Credentials - Mobile/password\");\t",
+                    "                },",
+                    "",
+                    "                scope: this",
+                    "            });   ",
+                    "",
+                    "",
+                    "        }else{",
+                    "            Ext.Msg.alert(\"Error\",\"Can't find Mobile Number in session storage\");  ",
+                    "        }",
+                    "",
+                    "    }else{",
+                    "        //2. No Phone number preceed to saving a new Passcode",
+                    "        console.log(\"Creating a new Passcode....\");",
+                    "        Ext.Ajax.request({",
+                    "            url: 'http://41.89.68.188/restserver/index.php/api/Flexipay_server/changepw/format/json',",
+                    "            method: 'POST',",
+                    "            params: {",
+                    "                new_password:passcode",
+                    "            },",
+                    "",
+                    "            success:function(result)",
+                    "            {",
+                    "                Ext.Viewport.setMasked(false); // hide the load screen",
+                    "",
+                    "                //1. Alert Success",
+                    "                Ext.Msg.alert(\"Success\", \"Done! Account Setup\");\t",
+                    "",
+                    "                // Read Session Storage to determine the User",
+                    "                var sessionObject = localStorage.getItem('sessionObject');",
+                    "                console.log('sessionObject : ',JSON.parse(sessionObject));",
+                    "",
+                    "                sessionObject=JSON.parse(sessionObject);",
+                    "",
+                    "                //Direct User to the screen Based on his Registration Info",
+                    "                //1.If Customer",
+                    "                if(sessionObject.access_keys === 'customer_user'){",
+                    "                    var user_dashboard = Ext.create('FlexiPay.view.customer_dashboard');     ",
+                    "                    Ext.Viewport.setActiveItem(user_dashboard);",
+                    "                }",
+                    "                else if(sessionObject.access_keys === 'merchant_user'){",
+                    "                    //If Merchant",
+                    "                    var merchant_dashboard = Ext.create('FlexiPay.view.merchant_dashboard'); ",
+                    "                    Ext.Viewport.setActiveItem(merchant_dashboard);  ",
+                    "                }else if(sessionObject.access_keys === 'agent_user'){",
+                    "                    //If Agent",
+                    "                    var agent_dashboard = Ext.create('FlexiPay.view.agent_dashboard'); ",
+                    "                    Ext.Viewport.setActiveItem(agent_dashboard); ",
+                    "                }",
+                    "            },",
+                    "",
+                    "            //Failed.. Call this function..",
+                    "            failure: function(result){",
+                    "                Ext.Viewport.setMasked(false); // hide the load screen",
+                    "                Ext.Msg.alert(\"Error: Server Said::\",\"There was something wrong with the Connection\");",
+                    "            },",
+                    "",
+                    "            scope: this",
+                    "        });    ",
+                    "    }",
+                    "",
+                    "}else{",
+                    "    Ext.Viewport.setMasked(false); // hide the load screen",
+                    "    Ext.Msg.alert(\"Error\",\"Cannot be blank!\");    ",
+                    "}",
+                    ""
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "authorise_done"
+            },
+            "designerId": "f7256492-2ae2-4972-b41d-b8d441eb3f54"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "introduction",
+                "ref": "introduction",
+                "selector": "introduction_carousel"
+            },
+            "designerId": "7c78d495-ffc9-47c9-82de-a408c8972e42"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "next_button",
+                "ref": "next_button",
+                "selector": "[itemId=next_button]"
+            },
+            "designerId": "4430d1a7-f783-4ea6-b053-d53537f49245"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "registerOption",
+                "ref": "registerOption",
+                "selector": "register_options"
+            },
+            "designerId": "f9d3f381-a196-46c0-a592-867067276c84"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onNextButton",
+                "fn": "onNextButton",
+                "implHandler": [
+                    "console.log(\"Next Tapped\");",
+                    "",
+                    "//TODO: Find Out why Its throwing an Exception when back button is pressed",
+                    "Ext.Msg.confirm('Check', 'Do you have an Existing Account?', function(buttonId) {",
+                    "",
+                    "    if(buttonId == 'yes') { ",
+                    "        //Push to Login",
+                    "        if (!this.authentication_screen) {",
+                    "            this.authentication_screen = Ext.create('FlexiPay.view.authentication_screen');",
+                    "        }",
+                    "        this.getIntroduction().push(this.authentication_screen);",
+                    "    }",
+                    "",
+                    "    else{",
+                    "        //Push to registration.",
+                    "        if (!this.registerOption) {",
+                    "            this.registerOption = Ext.create('FlexiPay.view.registration_options');",
+                    "        }",
+                    "        this.getIntroduction().push(this.registerOption);",
+                    "    }",
+                    "},this",
+                    ");",
+                    "",
+                    ""
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "next_button"
+            },
+            "designerId": "2885dc05-8f65-4d6a-b687-213b99713415"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "merchant_button",
+                "ref": "merchant_button",
+                "selector": "#merchant"
+            },
+            "designerId": "885f07e3-18a8-43f2-8e27-af757065d037"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "agent_button",
+                "ref": "agent_button",
+                "selector": "#agent"
+            },
+            "designerId": "679b2e77-2ec4-4552-bf40-e5184f5cf878"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "customer_button",
+                "ref": "customer_button",
+                "selector": "#customer"
+            },
+            "designerId": "a22bf486-0e45-4632-85ec-768706a0fe6a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMerchantTap",
+                "fn": "onMerchantTap",
+                "implHandler": [
+                    "console.log(\"Merchant Tapped\");",
+                    "",
+                    "",
+                    "if (!this.merchant_registration) {",
+                    "}",
+                    "",
+                    "this.merchant_registration = Ext.create('FlexiPay.view.merchant_registration_form');",
+                    "",
+                    "this.getIntroduction().push(this.merchant_registration);"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "merchant_button"
+            },
+            "designerId": "950f459a-64f9-4c2b-8b39-0578bb13d3c8"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "merchant_registration",
+                "ref": "merchant_registration",
+                "selector": "#merchant_registration"
+            },
+            "designerId": "656fefcc-f4d5-453d-abb9-6c1110fd422a"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "agent_registration",
+                "ref": "agent_registration",
+                "selector": "#agent_registration"
+            },
+            "designerId": "334222f5-c550-45a0-9723-6ca4e5c50625"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "customer_registration",
+                "ref": "customer_registration",
+                "selector": "customer_registration_form"
+            },
+            "designerId": "eb3c846d-6636-42bb-8b86-7e47c9e426df"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAgentTap",
+                "fn": "onAgentTap",
+                "implHandler": [
+                    "console.log(\"Agent Tapped\");",
+                    "",
+                    "if (!this.agent_registration) {",
+                    "}",
+                    "",
+                    "this.agent_registration = Ext.create('FlexiPay.view.agent_registration_form');",
+                    "",
+                    "this.getIntroduction().push(this.agent_registration);"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "agent_button"
+            },
+            "designerId": "f6884daa-cb68-4ed4-8396-98d4b774ac28"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onCustomerTap",
+                "fn": "onCustomerTap",
+                "implHandler": [
+                    "console.log(\"Customer Tapped\");",
+                    "",
+                    "if (!this.customer_registration) {",
+                    "}",
+                    "",
+                    "this.customer_registration = Ext.create('FlexiPay.view.customer_registration_form');",
+                    "",
+                    "this.getIntroduction().push(this.customer_registration);"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "customer_button"
+            },
+            "designerId": "641a25c4-30a0-4b97-9ae9-5a478f67b879"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "authentication_screen",
+                "ref": "authentication_screen",
+                "selector": "authentication_screen"
+            },
+            "designerId": "87d6e5de-6d65-494a-beb7-ccdfe7a2346f"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "customer_form",
+                "ref": "customer_form",
+                "selector": "#customer_form"
+            },
+            "designerId": "cf276d45-0d05-41c3-b7e6-7f0f5efcad15"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "authorisation_screen",
+                "ref": "authorisation_screen",
+                "selector": "authorisation_screen"
+            },
+            "designerId": "3b800550-93df-4a99-a591-684818373259"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "customer_save",
+                "ref": "customer_save",
+                "selector": "#save_customer"
+            },
+            "designerId": "7728e329-a42d-4838-97fd-815e7de7c2dc"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "merchant_save",
+                "ref": "merchant_save",
+                "selector": "#merchant_save"
+            },
+            "designerId": "54db8586-bc74-425c-b8f3-be2161bf4e01"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "agent_save",
+                "ref": "agent_save",
+                "selector": "#agent_save"
+            },
+            "designerId": "64fc063d-5d31-4dd4-80a5-35889e8dce99"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "verify_next",
+                "ref": "verify_next",
+                "selector": "#next_verify"
+            },
+            "designerId": "84657a59-e84d-449b-8b27-716df7676d96"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "verify_input",
+                "ref": "verify_input",
+                "selector": "#verify_input"
+            },
+            "designerId": "3891bb55-33df-4239-a8b1-0bf0d556841d"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "authorise_done",
+                "ref": "authorise_done",
+                "selector": "#authorise_done"
+            },
+            "designerId": "91f7d571-1a68-42ab-a3df-38a9b8bdd39f"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "authenticate_done",
+                "ref": "authenticate_done",
+                "selector": "#authenticate_done"
+            },
+            "designerId": "db567257-edeb-4170-b571-6234dadad731"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "mobile_input",
+                "ref": "mobile_input",
+                "selector": "#mobile_input"
+            },
+            "designerId": "487c7b5e-5bc1-4562-a708-d5e5603fa38c"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "init",
+                "fn": "init",
+                "designer|params": [
+                    "application"
+                ],
+                "implHandler": [
+                    "//alert(\"Init Called\");"
+                ]
+            },
+            "designerId": "feed6ac8-d0a4-4492-bba1-ff41d0590676"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "launch",
+                "fn": "launch",
+                "implHandler": [
+                    "//alert(\"Launch Called\");"
+                ]
+            },
+            "designerId": "0c0ea6e0-c1cf-4bd8-a285-d9a27ba33f60"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onCustomerSaveTap",
+                "fn": "onCustomerSaveTap",
+                "implHandler": [
+                    "var form = this.getCustomer_form();",
+                    "var values= form.getValues();",
+                    "values['account_id']=3;",
+                    "",
+                    "console.log(values);",
+                    "Ext.Viewport.setMasked({",
+                    "    xtype: 'loadmask',",
+                    "    message: 'Saving Records...'",
+                    "});",
+                    "",
+                    "",
+                    "",
+                    "//Getting the Instance of the model user which has a proxy",
+                    "var record = new FlexiPay.model.Users2(values);",
+                    "var errors = record.validate();",
+                    "",
+                    "",
+                    "//Ext.device.Notification.vibrate(); //",
+                    "if(errors.isValid()){   ",
+                    "    var me = this;",
+                    "    record.save({",
+                    "        success:function(result)",
+                    "        {",
+                    "            Ext.Viewport.setMasked(false); // hide the load screen",
+                    "",
+                    "            //TODO: Should be coming back and continuing from here",
+                    "            Ext.Msg.alert(\"Success\", \"You have successfully been registered as a customer. A verification code has been sent to your number, click OK to continue.\");\t",
+                    "\t\t\t",
+                    "            //2a. Store the user data to the HTML-5 Session Variable(for later usage)",
+                    "             //var data = Ext.JSON.decode(result.responseText.trim());",
+                    "            ",
+                    "            //console.log(data.v_code);",
+                    "            ",
+                    "            //Direct User to Verification Screen    ",
+                    "            var verification_screen = Ext.create('FlexiPay.view.Verification_screen');     ",
+                    "            Ext.Viewport.setActiveItem(verification_screen);",
+                    "        },",
+                    "",
+                    "        failure: function(model,operation){",
+                    "            Ext.Viewport.setMasked(false); // hide the load screen",
+                    "            var reader = model.getProxy().getReader();",
+                    "            console.log(model,operation);",
+                    "            //var message = reader.getMessage(reader.rawData);",
+                    "            Ext.Msg.alert(\"Error: Server Said::\",\"The Mobile Number exists. Enter a Unique Number\");",
+                    "",
+                    "            /*METHOD NOT WORKING ",
+                    "            var proxy = model.getProxy();",
+                    "            proxy.addListener({",
+                    "            'exception': function(proxy, response, operation) {",
+                    "            var obj = JSON.parse(response.responseText);",
+                    "            console.log(obj);  ",
+                    "            }",
+                    "            });",
+                    "            */",
+                    "        }    ",
+                    "    });",
+                    "}else{",
+                    "    Ext.Viewport.setMasked(false); // hide the load screen",
+                    "    //Ext.Msg.alert(\"Error\", \"There were errors in your record, Check the Log for Information\");  ",
+                    "    console.log(\"All Errors\",errors.items);",
+                    "",
+                    "    var data=\"\";",
+                    "    errors.each(function (item, index, length) {",
+                    "        // Each item in the errors collection is an instance of the Ext.data.Error class.",
+                    "        data = data + '|'+item.getField()+' - '+ item.getMessage() +'|' + '\\n';",
+                    "    });",
+                    "    Ext.Msg.alert(\"Validation Failed\", data);",
+                    "",
+                    "}",
+                    "",
+                    "",
+                    "",
+                    ""
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "customer_save"
+            },
+            "designerId": "1468acb3-3383-4856-a531-a2c8e2fccf81"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onVerifyTap",
+                "fn": "onVerifyTap",
+                "implHandler": [
+                    "console.log('Verify Tapped');",
+                    "",
+                    "var input = this.getVerify_input();",
+                    "var values = input.getValue();",
+                    "",
+                    "",
+                    "if(values){",
+                    "    Ext.Viewport.setMasked({",
+                    "        xtype: 'loadmask',",
+                    "        message: 'Validating...'",
+                    "    });",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: 'http://41.89.68.188/restserver/index.php/api/Flexipay_server/verify/format/json',",
+                    "        method: 'POST',",
+                    "        params: {",
+                    "            v_code:values",
+                    "        },",
+                    "",
+                    "        success:function(result)",
+                    "        {",
+                    "            Ext.Viewport.setMasked(false); // hide the load screen",
+                    "",
+                    "            //1. Should be coming back and continuing from here",
+                    "            Ext.Msg.alert(\"Success\", \"Verification Success. Choose a secret passcode to verify transactions\");\t",
+                    "",
+                    "            //2. Store the user data to the HTML-5 Session Variable",
+                    "            var data = Ext.JSON.decode(result.responseText.trim());",
+                    "",
+                    "            //OPTION 2: Store the USER-ID in Session Storage (HTML5)",
+                    "            var sessionObject = {'user_id': data.user_id, 'mobile_number': data.mobile_number, 'access_keys':data.access_keys};",
+                    "",
+                    "            // Put the session object into storage",
+                    "            localStorage.setItem('sessionObject', JSON.stringify(sessionObject ));",
+                    "",
+                    "",
+                    "            console.log('sessionObject: ',sessionObject);",
+                    "",
+                    "",
+                    "            //3. Send User to pick A 4-Pin Verification",
+                    "            //Authorisation Screen",
+                    "            var authorisation_screen = Ext.create('FlexiPay.view.Authorisation_screen');",
+                    "            Ext.Viewport.setActiveItem(authorisation_screen);",
+                    "",
+                    "        },",
+                    "",
+                    "        //Failed.. Call this function..",
+                    "        failure: function(result){",
+                    "            Ext.Viewport.setMasked(false); // hide the load screen",
+                    "            Ext.Msg.alert(\"Error: Server Said::\",\"Incorrect Verification Code Entered\");",
+                    "        },",
+                    "",
+                    "        scope: this",
+                    "    });",
+                    "",
+                    "}else{",
+                    "    Ext.Msg.alert(\"Error\",\"Cannot be blank!\");    ",
+                    "}",
+                    "",
+                    "",
+                    ""
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "verify_next"
+            },
+            "designerId": "523c2294-30c7-4d6b-b663-d74ba797d15b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onMerchantSaveTap",
+                "fn": "onMerchantSaveTap",
+                "implHandler": [
+                    "var form = this.getMerchant_registration();",
+                    "var values= form.getValues();",
+                    "values['account_id']=1;",
+                    "",
+                    "console.log(values);",
+                    "Ext.Viewport.setMasked({",
+                    "    xtype: 'loadmask',",
+                    "    message: 'Saving Records...'",
+                    "});",
+                    "",
+                    "",
+                    "",
+                    "//Getting the Instance of the model user which has a proxy",
+                    "var record = new FlexiPay.model.Users2(values);",
+                    "var errors = record.validate();",
+                    "",
+                    "",
+                    "//Ext.device.Notification.vibrate(); //",
+                    "if(errors.isValid()){   ",
+                    "    var me = this;",
+                    "    record.save({",
+                    "        success:function(result)",
+                    "        {",
+                    "            Ext.Viewport.setMasked(false); // hide the load screen",
+                    "",
+                    "            //TODO: Should be coming back and continuing from here",
+                    "            Ext.Msg.alert(\"Success!\", \"You have successfully been registered as a Merchant. A verification code has been sent to your number, click OK to continue.\");\t",
+                    "\t\t\t",
+                    "            //2a. Store the user data to the HTML-5 Session Variable(for later usage)",
+                    "            ",
+                    "            //var data = Ext.JSON.decode(result.responseText.trim());",
+                    "            ",
+                    "            //console.log(data.v_code);",
+                    "            ",
+                    "            //Direct User to Verification Screen    ",
+                    "            var verification_screen = Ext.create('FlexiPay.view.Verification_screen');     ",
+                    "            Ext.Viewport.setActiveItem(verification_screen);",
+                    "        },",
+                    "",
+                    "        failure: function(model,operation){",
+                    "            Ext.Viewport.setMasked(false); // hide the load screen",
+                    "            var reader = model.getProxy().getReader();",
+                    "            console.log(model,operation);",
+                    "            //var message = reader.getMessage(reader.rawData);",
+                    "            Ext.Msg.alert(\"Error: Server Said::\",\"The Mobile Number exists. Enter a Unique Number\");",
+                    "",
+                    "            /*METHOD NOT WORKING ",
+                    "            var proxy = model.getProxy();",
+                    "            proxy.addListener({",
+                    "            'exception': function(proxy, response, operation) {",
+                    "            var obj = JSON.parse(response.responseText);",
+                    "            console.log(obj);  ",
+                    "            }",
+                    "            });",
+                    "            */",
+                    "        }    ",
+                    "    });",
+                    "}else{",
+                    "    Ext.Viewport.setMasked(false); // hide the load screen",
+                    "    //Ext.Msg.alert(\"Error\", \"There were errors in your record, Check the Log for Information\");  ",
+                    "    console.log(\"All Errors\",errors.items);",
+                    "",
+                    "    var data=\"\";",
+                    "    errors.each(function (item, index, length) {",
+                    "        // Each item in the errors collection is an instance of the Ext.data.Error class.",
+                    "        data = data + '|'+item.getField()+' - '+ item.getMessage() +'|' + '\\n';",
+                    "    });",
+                    "    Ext.Msg.alert(\"Validation Failed\", data);",
+                    "",
+                    "}",
+                    ""
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "merchant_save"
+            },
+            "designerId": "7ecc2ca5-31a6-49d1-8710-9a3c57abf06f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAgentSave",
+                "fn": "onAgentSave",
+                "implHandler": [
+                    "var form = this.getAgent_registration();",
+                    "var values= form.getValues();",
+                    "values['account_id']=2;",
+                    "",
+                    "console.log(values);",
+                    "Ext.Viewport.setMasked({",
+                    "    xtype: 'loadmask',",
+                    "    message: 'Saving Records...'",
+                    "});",
+                    "",
+                    "",
+                    "",
+                    "//Getting the Instance of the model user which has a proxy",
+                    "var record = new FlexiPay.model.Users2(values);",
+                    "var errors = record.validate();",
+                    "",
+                    "",
+                    "//Ext.device.Notification.vibrate(); //",
+                    "if(errors.isValid()){   ",
+                    "    var me = this;",
+                    "    record.save({",
+                    "        success:function(result)",
+                    "        {",
+                    "            Ext.Viewport.setMasked(false); // hide the load screen",
+                    "",
+                    "            //TODO: Should be coming back and continuing from here",
+                    "            Ext.Msg.alert(\"Success!\", \"You have successfully been registered as a Agent. A verification code has been sent to your number, click OK to continue.\");\t",
+                    "\t\t\t",
+                    "\t\t\t//2a. Store the user data to the HTML-5 Session Variable(for later usage)",
+                    "             //var data = Ext.JSON.decode(result.responseText.trim());",
+                    "            ",
+                    "            //console.log(data.v_code);",
+                    "            //Direct User to Verification Screen    ",
+                    "            var verification_screen = Ext.create('FlexiPay.view.Verification_screen');     ",
+                    "            Ext.Viewport.setActiveItem(verification_screen);",
+                    "        },",
+                    "",
+                    "        failure: function(model,operation){",
+                    "            Ext.Viewport.setMasked(false); // hide the load screen",
+                    "            var reader = model.getProxy().getReader();",
+                    "            console.log(model,operation);",
+                    "            //var message = reader.getMessage(reader.rawData);",
+                    "            Ext.Msg.alert(\"Error: Server Said::\",\"The Mobile Number exists. Enter a Unique Number\");",
+                    "        }    ",
+                    "    });",
+                    "}else{",
+                    "    Ext.Viewport.setMasked(false); // hide the load screen",
+                    "    //Ext.Msg.alert(\"Error\", \"There were errors in your record, Check the Log for Information\");  ",
+                    "    console.log(\"All Errors\",errors.items);",
+                    "",
+                    "    var data=\"\";",
+                    "    errors.each(function (item, index, length) {",
+                    "        // Each item in the errors collection is an instance of the Ext.data.Error class.",
+                    "        data = data + '|'+item.getField()+' - '+ item.getMessage() +'|' + '\\n';",
+                    "    });",
+                    "    Ext.Msg.alert(\"Validation Failed\", data);",
+                    "",
+                    "}"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "agent_save"
+            },
+            "designerId": "6c18310b-f13c-4b7c-9593-07826f612ae9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onAuthenticateTap",
+                "fn": "onAuthenticateTap",
+                "implHandler": [
+                    "console.log('Verify Tapped');",
+                    "",
+                    "var input = this.getMobile_input();",
+                    "var values = input.getValue();",
+                    "",
+                    "",
+                    "if(values){   ",
+                    "    //1. Write into Session Storage",
+                    "    //OPTION 2: Store the USER-ID in Session Storage (HTML5)",
+                    "    var sessionObject = {'mobile_number':values,'has_account':true};",
+                    "",
+                    "    // Put the session object into storage",
+                    "    localStorage.setItem('sessionObject', JSON.stringify(sessionObject ));",
+                    "",
+                    "",
+                    "    console.log(sessionObject);",
+                    "    //2. Leave to authorisation screen",
+                    "    //Authorisation Screen",
+                    "    var authorisation_screen = Ext.create('FlexiPay.view.Authorisation_screen');",
+                    "    Ext.Viewport.setActiveItem(authorisation_screen);",
+                    "",
+                    "}else{",
+                    "    Ext.Msg.alert(\"Error\",\"Cannot be blank!\");    ",
+                    "}",
+                    ""
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "authenticate_done"
+            },
+            "designerId": "9c421c75-416f-4b9b-8a25-d19b86666bbe"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "type": "cssresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "url": "resources/css/pesasafe.css",
+        "id": "flexipay_css"
+    },
+    "designerId": "915a701f-361b-464a-b42e-10f62f05eb5d"
+}

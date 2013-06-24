@@ -1,0 +1,85 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "main_viewport",
+        "designer|userClassName": "Viewport",
+        "designer|initialView": true,
+        "layout": "card"
+    },
+    "designerId": "556a0c1b-2ff8-45e9-924b-1a4a86db217e",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "introduction_carousel",
+                "designer|createAlias": "introduction_carousel"
+            },
+            "designerId": "44d00715-0cdd-4102-9b20-7b5bbe3ab392",
+            "masterInstanceId": "4f621839-8f06-4746-bda4-4c0f0501480f"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "authorisation_screen",
+                "designer|createAlias": "authorisation_screen"
+            },
+            "designerId": "d528846d-da5a-41b3-b042-3d7839e4a8cd",
+            "masterInstanceId": "764d99de-7e2b-4f1c-ae86-2bca01a30cdf"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "b64e2efa-222c-4de0-974c-f995cbee5c4e",
+            "masterInstanceId": "99c208be-514e-41e0-bfc5-9e22356acd38"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "12b4ca42-8ed3-414f-a914-39eb9ebafcf3",
+            "masterInstanceId": "0e50699c-dae8-43d2-9769-6bc4fa3e5108"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "a51c6464-c47e-4fdf-84fc-917c845ed30f",
+            "masterInstanceId": "3a19be87-131e-4012-8db6-61f802ed8d4b"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "a29ec6b5-5be1-494e-b909-5432d3e598cd",
+            "masterInstanceId": "0878b5ed-c2ed-4e60-8575-94e0c4a19570"
+        }
+    ]
+}

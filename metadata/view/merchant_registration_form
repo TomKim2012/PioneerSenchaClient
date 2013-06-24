@@ -1,0 +1,203 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "merchant_registration",
+        "margin": null,
+        "designer|userClassName": "merchant_registration_form",
+        "designer|userAlias": "merchant_registration_form",
+        "designer|displayName": "merchant_form",
+        "autoDestroy": false
+    },
+    "designerId": "3a19be87-131e-4012-8db6-61f802ed8d4b",
+    "cn": [
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "margin": null,
+                "designer|userClassName": "MyFieldSet2",
+                "title": "New Merchant"
+            },
+            "designerId": "ab04efb5-92b3-47a7-969e-b96bed4c7440"
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "width": "",
+                "designer|userClassName": "MyFieldSet",
+                "defaults": [
+                    "{labelWidth:'45%'}"
+                ],
+                "title": "Personal:"
+            },
+            "designerId": "68709cde-704f-42cc-ae55-ae4690812d57",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": "",
+                        "designer|userClassName": "MyTextField",
+                        "label": "*First Name:",
+                        "labelWidth": null,
+                        "name": "first_name"
+                    },
+                    "designerId": "a18f0e58-74bc-4d1f-b336-7ace2390e7c9"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": null,
+                        "designer|userClassName": "MyTextField",
+                        "label": "*Last Name:",
+                        "labelWidth": null,
+                        "name": "last_name"
+                    },
+                    "designerId": "9eed619a-7b08-4646-9f60-3ca3dc054d8d"
+                },
+                {
+                    "type": "Ext.field.Email",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyEmailField",
+                        "label": "*Email:",
+                        "labelWidth": null,
+                        "name": "email",
+                        "placeHolder": "email@example.com"
+                    },
+                    "designerId": "b2de1b7f-14ed-48e4-a58f-b5f9ecac0f3d"
+                },
+                {
+                    "type": "Ext.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyNumberField",
+                        "designer|displayName": "phone_number",
+                        "label": "*Mobile:",
+                        "name": "mobile_number",
+                        "value": [
+                            "254"
+                        ]
+                    },
+                    "designerId": "5e44f6b7-4c24-46f5-9447-0b50719ee6cd"
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.FieldSet",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "width": "",
+                "designer|userClassName": "MyFieldSet",
+                "defaults": [
+                    "{labelWidth:'45%'}"
+                ],
+                "title": "Business Details:"
+            },
+            "designerId": "045f246d-099e-4a54-bf50-1328f3a953de",
+            "cn": [
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": "",
+                        "designer|userClassName": "MyTextField",
+                        "label": "*Business Name:",
+                        "labelWidth": null,
+                        "name": "business_name"
+                    },
+                    "designerId": "75a30663-a5b6-483f-92bc-1c44cbaf9131"
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": "",
+                        "designer|userClassName": "MyTextField",
+                        "label": "*City/town",
+                        "labelWidth": null,
+                        "name": "business_location"
+                    },
+                    "designerId": "cc0e9dca-be06-4d5f-89ae-d40dcf8df9f4"
+                },
+                {
+                    "type": "Ext.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": null,
+                        "designer|userClassName": "MyTextArea",
+                        "label": "Address:",
+                        "labelWidth": null,
+                        "name": "business_address"
+                    },
+                    "designerId": "75d630f7-04aa-41ff-a163-e2e561e42a0a"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "id": "merchant_save",
+                "ui": "confirm",
+                "width": null,
+                "designer|userClassName": "MyButton17",
+                "text": "SAVE"
+            },
+            "designerId": "a35be4b5-620f-4c71-87cc-dafcea0018dc"
+        }
+    ]
+}
