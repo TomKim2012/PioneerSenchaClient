@@ -19,8 +19,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "Account_number",
-                "type": "auto",
-                "designer|userClassName": "field22"
+                "type": "auto"
             },
             "designerId": "cb0cabaf-0a59-42c1-aa77-e24b866d6751"
         },
@@ -33,8 +32,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "Account_balance",
-                "type": "int",
-                "designer|userClassName": "field23"
+                "type": "int"
             },
             "designerId": "c7d6140b-a393-41e7-89d1-ae02d3eac3af"
         },
@@ -47,8 +45,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "user_id",
-                "type": "int",
-                "designer|userClassName": "field24"
+                "type": "int"
             },
             "designerId": "9c1326c5-6795-479b-834a-aaecca0fb93d"
         }

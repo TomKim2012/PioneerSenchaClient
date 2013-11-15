@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "autoLoad": true,
         "model": "Users2",
         "storeId": "current_user",
         "designer|userClassName": "User_Store"
@@ -20,7 +21,6 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|userClassName": "MyLocalStorageProxy",
                 "id": "local"
             },
             "designerId": "43439db3-0838-4ef6-b669-22c2d9808bc1"

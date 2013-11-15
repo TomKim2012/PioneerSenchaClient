@@ -1,0 +1,106 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyContainer8"
+    },
+    "designerId": "ebf22fa4-05af-48d1-a001-e536d02a7598",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "929e54d0-14db-43eb-a238-048c9bde3ee9",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Tab 1",
+                        "centered": null,
+                        "height": null,
+                        "html": "Testing1",
+                        "ui": "",
+                        "layout": "fit"
+                    },
+                    "designerId": "29e55444-9ff7-409c-bdbd-4086b03dae4b",
+                    "cn": [
+                        {
+                            "type": "Ext.form.FieldSet",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "title": "MyFieldSet4"
+                            },
+                            "designerId": "86dceccd-fac2-4a8b-8644-db16972bd510",
+                            "cn": [
+                                {
+                                    "type": "Ext.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "Field"
+                                    },
+                                    "designerId": "db7c82d1-09bf-4360-aa46-6f70283a14a1"
+                                },
+                                {
+                                    "type": "Ext.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "label": "Field"
+                                    },
+                                    "designerId": "5cdc26ff-860c-4224-9bdb-8dc21c1b19a2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Tab 2"
+                    },
+                    "designerId": "f55d4aef-1382-47f3-bf17-7a4094489a1a"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Tab 3"
+                    },
+                    "designerId": "5f06f6f9-a8fd-45a1-8065-733784097c1f"
+                }
+            ]
+        }
+    ]
+}

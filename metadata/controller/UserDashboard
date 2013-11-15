@@ -1,0 +1,27 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "UserDashboard"
+    },
+    "designerId": "20cea0c7-999b-4329-a177-159e92e8fab6",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "dashboard",
+                "selector": "#dashboard"
+            },
+            "designerId": "a6472fa8-fafe-42c9-b34a-c01bff7933d2"
+        }
+    ]
+}

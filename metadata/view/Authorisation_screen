@@ -6,12 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
+        "fullscreen": true,
         "id": "authorisation_panel",
         "ui": "light",
         "designer|userClassName": "Authorisation_screen",
         "designer|userAlias": "authorisation_screen",
-        "designer|displayName": "authentication_screen",
-        "layout": "fit"
+        "layout": "fit",
+        "scrollable": false
     },
     "designerId": "764d99de-7e2b-4f1c-ae86-2bca01a30cdf",
     "cn": [
@@ -25,12 +26,26 @@
             "userConfig": {
                 "container|align": "center",
                 "ui": "",
-                "designer|userClassName": "MyContainer12",
                 "designer|displayName": "login_panel",
                 "layout": "vbox"
             },
             "designerId": "84c6ff1e-08a6-419f-b377-497e63d2df54",
             "cn": [
+                {
+                    "type": "Ext.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 110,
+                        "hidden": false,
+                        "html": "<img src=\"resources/images/pioneer_logo.png\" width=\"150\" height=\"90\" />",
+                        "styleHtmlContent": true
+                    },
+                    "designerId": "8434c7be-4295-45ad-91d7-17a9daa64f85"
+                },
                 {
                     "type": "Ext.form.FieldSet",
                     "reference": {
@@ -40,11 +55,11 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
+                        "hidden": true,
                         "margin": null,
-                        "designer|userClassName": "MyFieldSet2",
-                        "title": "Enter Your Passcode"
+                        "title": "Login:"
                     },
-                    "designerId": "063d1c6d-9fce-4e46-97c6-3aebe3da62e3"
+                    "designerId": "e571c296-8f00-4bd4-9c41-3e92b100818e"
                 },
                 {
                     "type": "Ext.Container",
@@ -55,23 +70,71 @@
                     "codeClass": null,
                     "userConfig": {
                         "layout|flex": null,
-                        "container|align": "center",
+                        "docked": null,
+                        "height": "",
+                        "margin": 10,
+                        "padding": 0,
+                        "style": "",
+                        "ui": null,
+                        "designer|displayName": "number_container",
+                        "defaults": [
+                            "{",
+                            " flex:1,",
+                            " clearIcon:false,",
+                            " style: 'border:1px solid blue',",
+                            "}"
+                        ]
+                    },
+                    "designerId": "2cdadb03-997a-4d98-817a-9cbd2d7ea58d",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "height": null,
+                                "id": "mobile_input",
+                                "margin": null,
+                                "style": null,
+                                "top": null,
+                                "width": null,
+                                "designer|displayName": "userName",
+                                "label": null,
+                                "labelAlign": null,
+                                "labelWidth": "40%",
+                                "name": "userName",
+                                "required": true,
+                                "placeHolder": "UserName"
+                            },
+                            "designerId": "365e9bd7-0d2d-4a5c-bdc1-814b35ee6a68"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
                         "container|pack": "center",
                         "docked": null,
                         "height": null,
-                        "margin": null,
+                        "margin": "",
                         "padding": "0 3",
                         "style": "",
                         "ui": null,
-                        "designer|userClassName": "MyContainer11",
                         "designer|displayName": "password_container",
                         "defaults": [
                             "{",
                             " flex:1,",
                             " margin:4,",
-                            " maxLength:1,",
                             " clearIcon:false,",
-                            " pattern : '[0-9]*',",
                             " style: 'border:1px solid blue;',",
                             "}"
                         ],
@@ -93,92 +156,14 @@
                                 "style": "border:1px solid blue;",
                                 "top": null,
                                 "width": null,
-                                "designer|userClassName": "MyPasswordField2",
                                 "label": null,
                                 "labelAlign": null,
-                                "name": "mypasswordfield1",
-                                "placeHolder": null
+                                "name": "mypasswordfield",
+                                "placeHolder": "Password"
                             },
                             "designerId": "659c1383-c92a-4afe-a8a3-a45464b7a226"
-                        },
-                        {
-                            "type": "Ext.field.Password",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "height": null,
-                                "margin": null,
-                                "style": null,
-                                "top": null,
-                                "width": null,
-                                "designer|userClassName": "MyPasswordField2",
-                                "label": null,
-                                "labelAlign": null,
-                                "name": "mypasswordfield2",
-                                "placeHolder": null
-                            },
-                            "designerId": "c54b1b48-228a-491a-a491-5da47144aabd"
-                        },
-                        {
-                            "type": "Ext.field.Password",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "height": null,
-                                "margin": null,
-                                "style": null,
-                                "top": null,
-                                "width": null,
-                                "designer|userClassName": "MyPasswordField2",
-                                "label": null,
-                                "labelAlign": null,
-                                "name": "mypasswordfield3",
-                                "placeHolder": null
-                            },
-                            "designerId": "e8b0cddc-cc68-4ed7-af1f-ad054714d376"
-                        },
-                        {
-                            "type": "Ext.field.Password",
-                            "reference": {
-                                "name": "items",
-                                "type": "array"
-                            },
-                            "codeClass": null,
-                            "userConfig": {
-                                "height": null,
-                                "margin": null,
-                                "style": null,
-                                "top": null,
-                                "width": null,
-                                "designer|userClassName": "MyPasswordField2",
-                                "label": null,
-                                "labelAlign": null,
-                                "name": "mypasswordfield4",
-                                "placeHolder": null
-                            },
-                            "designerId": "107b8cd4-009a-40bc-9e1e-cb343a6fbac5"
                         }
                     ]
-                },
-                {
-                    "type": "Ext.Label",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "html": "Please Enter your 4 digit pin",
-                        "styleHtmlContent": true,
-                        "designer|userClassName": "MyLabel"
-                    },
-                    "designerId": "e149b896-b46d-48bd-a9c2-9f3f52d7df38"
                 },
                 {
                     "type": "Ext.Button",
@@ -189,12 +174,12 @@
                     "codeClass": null,
                     "userConfig": {
                         "id": "authorise_done",
+                        "margin": 10,
                         "ui": "confirm",
-                        "designer|userClassName": "MyButton32",
                         "iconAlign": "right",
                         "iconCls": "arrow_right",
                         "iconMask": true,
-                        "text": "DONE"
+                        "text": "LOGIN"
                     },
                     "designerId": "62429705-78bd-492a-a27d-eba7ebe2219a"
                 }

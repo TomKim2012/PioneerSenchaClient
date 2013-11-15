@@ -10,7 +10,6 @@
         "margin": 0,
         "designer|userClassName": "customer_registration_form",
         "designer|userAlias": "customer_registration_form",
-        "designer|displayName": "customer_form",
         "autoDestroy": false
     },
     "designerId": "0e50699c-dae8-43d2-9769-6bc4fa3e5108",
@@ -24,7 +23,6 @@
             "codeClass": null,
             "userConfig": {
                 "margin": null,
-                "designer|userClassName": "MyFieldSet2",
                 "title": "New Customer"
             },
             "designerId": "0403a0eb-0d5a-43df-8e57-0f9db642782a"
@@ -39,12 +37,12 @@
             "userConfig": {
                 "height": null,
                 "width": "",
-                "designer|userClassName": "MyFieldSet",
+                "designer|displayName": "customer_registration",
                 "defaults": [
                     "{labelWidth:'45%'}"
                 ],
                 "instructions": "* means that the field is required. ",
-                "title": "Registration:"
+                "title": null
             },
             "designerId": "a8383251-384b-4981-8e23-58c6af1634b9",
             "cn": [
@@ -57,7 +55,6 @@
                     "codeClass": null,
                     "userConfig": {
                         "width": "",
-                        "designer|userClassName": "MyTextField",
                         "label": "*First Name:",
                         "labelWidth": null,
                         "name": "first_name"
@@ -73,12 +70,26 @@
                     "codeClass": null,
                     "userConfig": {
                         "width": null,
-                        "designer|userClassName": "MyTextField",
                         "label": "*Last Name:",
                         "labelWidth": null,
                         "name": "last_name"
                     },
                     "designerId": "55c60590-cc60-4637-a585-3e12ff14dbf3"
+                },
+                {
+                    "type": "Ext.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "id_number",
+                        "label": "*Id No",
+                        "name": "id_number",
+                        "placeHolder": null
+                    },
+                    "designerId": "737c9469-cb59-4ff6-9af3-f8ddac16a353"
                 },
                 {
                     "type": "Ext.field.Email",
@@ -88,7 +99,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyEmailField",
                         "label": "Email:",
                         "labelWidth": null,
                         "name": "email",
@@ -104,7 +114,6 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|userClassName": "MyNumberField",
                         "designer|displayName": "mobile_number",
                         "label": "*Mobile Number",
                         "name": "mobile_number",
@@ -113,7 +122,7 @@
                         ],
                         "placeHolder": "Mobile Number"
                     },
-                    "designerId": "737c9469-cb59-4ff6-9af3-f8ddac16a353"
+                    "designerId": "9f03fc17-3eb3-4017-a4a1-6a8113fcafb6"
                 }
             ]
         },
@@ -128,7 +137,6 @@
                 "id": "save_customer",
                 "ui": "confirm",
                 "width": null,
-                "designer|userClassName": "MyButton17",
                 "text": "SAVE"
             },
             "designerId": "87593996-7536-429a-9196-51aedbc7b562"

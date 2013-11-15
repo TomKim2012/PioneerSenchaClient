@@ -6,7 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "url": "app/controller/dashboard_controller.js"
+        "designer|userClassName": "js6",
+        "url": "app/view/customer_dashboard.js"
     },
-    "designerId": "9943f6f7-20a8-46a5-9f21-11a0f11abba6"
+    "designerId": "7916f70e-5525-42d8-8a62-35b11030ca44"
 }

@@ -14,7 +14,7 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('FlexiPay.view.customer_dashboard', {
+Ext.define('PioneerApp.view.customer_dashboard', {
     extend: 'Ext.tab.Panel',
     alias: 'widget.user_dashboard1',
 

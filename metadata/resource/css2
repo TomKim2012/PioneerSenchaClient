@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "url": "resources/css/pesasafe.css",
-        "id": "flexipay_css"
+        "designer|userClassName": "css2",
+        "url": "resources/css/sencha-touch.css"
     },
-    "designerId": "915a701f-361b-464a-b42e-10f62f05eb5d"
+    "designerId": "16d92dfb-15e4-4a0e-8bcb-336e0d419c70"
 }

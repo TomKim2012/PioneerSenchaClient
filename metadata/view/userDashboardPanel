@@ -1,0 +1,247 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "userDashboardPanel"
+    },
+    "designerId": "066dcbf5-91bd-4e71-93e2-e62218325c7c",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "title": "PioneerFSA"
+            },
+            "designerId": "e6477e8c-a768-4f4f-9959-e58051c910f5",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "docked": "right",
+                        "right": 2,
+                        "top": 10,
+                        "ui": "action-small",
+                        "text": "LOGOUT"
+                    },
+                    "designerId": "a670ed96-5045-4055-9812-24a8d5c40014"
+                }
+            ]
+        },
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|animation": "flip",
+                "docked": "bottom"
+            },
+            "designerId": "d8703ca1-d859-46f4-b2f9-102c204fd2c0",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Transactions",
+                        "iconCls": "bookmarks",
+                        "docked": null,
+                        "height": null,
+                        "html": null,
+                        "ui": "",
+                        "designer|displayName": "Transactions"
+                    },
+                    "designerId": "2ff18474-e90b-43ff-8e42-88a5df06c6b0",
+                    "cn": [
+                        {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "start",
+                                "docked": "top",
+                                "id": "register_options",
+                                "margin": null,
+                                "padding": "0 40px",
+                                "autoDestroy": false,
+                                "defaults": [
+                                    "{",
+                                    " margin:'10px',",
+                                    " iconCls: 'user',",
+                                    " iconMask: true",
+                                    "}"
+                                ],
+                                "layout": "vbox",
+                                "scrollable": true
+                            },
+                            "designerId": "99c208be-514e-41e0-bfc5-9e22356acd38",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.FieldSet",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "margin": null,
+                                        "width": 232,
+                                        "title": "Transactions"
+                                    },
+                                    "designerId": "d1b64ff0-7b21-4b77-aa9e-8fb3ff2a578f"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "height": 110,
+                                        "id": "merchant",
+                                        "iconCls": "add",
+                                        "iconMask": true,
+                                        "text": "New Transactions"
+                                    },
+                                    "designerId": "4306f1f4-64cb-4896-8fa5-68789da5ceb9"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "id": "agent",
+                                        "iconMask": null,
+                                        "text": "View Transactions"
+                                    },
+                                    "designerId": "88726779-3d66-47be-8133-6e268a2bacf4"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "id": "customer",
+                                        "text": "Customer A/C"
+                                    },
+                                    "designerId": "79323445-7bac-4411-b987-7e419be4ffb2"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 284,
+                                "designer|displayName": "user_Info"
+                            },
+                            "designerId": "43f5a8af-bf12-4f01-bd2d-a132c2c6438b",
+                            "cn": [
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "html": "Logged In As:"
+                                    },
+                                    "designerId": "91dcb7a1-c683-4893-b24a-a1eeb1b0d267"
+                                },
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "html": "Allocation Date:"
+                                    },
+                                    "designerId": "17fabcc9-1e95-4e61-8eb5-5c8ca4716e0b"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Customers",
+                        "iconCls": "team"
+                    },
+                    "designerId": "01398fd2-42b1-4a47-b209-ba599b5bafc2"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "title": "Settings",
+                        "iconCls": "settings"
+                    },
+                    "designerId": "6465923c-7707-4d65-b748-2f1404a8f9b3"
+                },
+                {
+                    "type": "Ext.tab.Bar",
+                    "reference": {
+                        "name": "tabBar",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": "bottom"
+                    },
+                    "designerId": "6366804d-edf8-47b6-8d4b-88c75a85c448"
+                }
+            ]
+        }
+    ]
+}

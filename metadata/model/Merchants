@@ -19,8 +19,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "merchant_id",
-                "type": "int",
-                "designer|userClassName": "field5"
+                "type": "int"
             },
             "designerId": "bd165eea-6afc-45dc-98c2-a35990744565"
         },
@@ -33,8 +32,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "Business_name",
-                "type": "string",
-                "designer|userClassName": "field6"
+                "type": "string"
             },
             "designerId": "32ffc90b-4a32-4f7e-b32c-b9b724880b48"
         },
@@ -47,8 +45,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "city",
-                "type": "string",
-                "designer|userClassName": "field12"
+                "type": "string"
             },
             "designerId": "98d0f7b8-5479-4f6c-b0ba-c173ceb6502d"
         },
@@ -61,8 +58,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "address",
-                "type": "string",
-                "designer|userClassName": "field13"
+                "type": "string"
             },
             "designerId": "55899003-0483-4588-86d2-2608bd0685fd"
         },
@@ -75,8 +71,7 @@
             "codeClass": null,
             "userConfig": {
                 "name": "user_id",
-                "type": "int",
-                "designer|userClassName": "field14"
+                "type": "int"
             },
             "designerId": "e9e012d4-608d-4b40-8619-bea36f11e011"
         }
